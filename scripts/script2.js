@@ -1,4 +1,4 @@
-export function inicioPagina2() {
+function inicioPagina2() {
   //! Fazendo seleção dos elementos necessários ----------------------------------
 
   //Selecionando botão de trocar o plano
@@ -64,3 +64,5 @@ export function inicioPagina2() {
     });
   });
 }
+
+inicioPagina2();

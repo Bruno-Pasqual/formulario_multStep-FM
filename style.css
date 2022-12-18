@@ -346,15 +346,12 @@ footer {
   border-radius: 8px;
 }
 
-.servico_online_container input {
-}
-
 .textContainer p {
   font-size: 12px;
   width: 155px;
 }
 
-#online_service_input {
+.precoAdicionalComplementos {
   width: 20px;
   height: 20px;
 }

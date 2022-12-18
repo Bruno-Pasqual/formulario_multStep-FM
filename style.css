@@ -367,3 +367,39 @@ footer {
   font-weight: 400;
   font-size: 12px;
 }
+
+/* ! Container finalização -------------------------------------------------- */
+#container_confirmacao {
+  background: white;
+  width: 343px;
+  position: absolute;
+  top: 96px;
+  left: 16px;
+  padding: 32px 24px;
+  border-radius: 10px;
+}
+
+#container_confirmacao .form_details {
+  margin-bottom: 22px;
+}
+
+#container_produtos_selecionados {
+  background: #f8f9ff;
+  border-radius: 8px;
+  padding: 16px;
+}
+
+#container_produtos_selecionados h3 {
+  color: #022959;
+}
+#container_produtos_selecionados a {
+  color: #9699aa;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+#container_plano_selecionado {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}

@@ -334,7 +334,7 @@ footer {
   left: 16px;
 }
 
-.servico_online_container {
+.container_complementos {
   width: 295px;
   height: 62px;
   border: 1px solid lightgray;
@@ -351,7 +351,7 @@ footer {
   width: 155px;
 }
 
-.precoAdicionalComplementos {
+.input_check {
   width: 20px;
   height: 20px;
 }

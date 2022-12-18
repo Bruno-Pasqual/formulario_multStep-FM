@@ -251,5 +251,107 @@ function trocaAtivo() {
     }
 
     inicioPagina2();
+  } else if (passosContainer[2].classList.contains('ativo')) {
+    containerPai.innerHTML = `<div class="container_adicionais">
+    <h2 class="form_title">Selecione complementos</h2>
+    <p class="form_details">
+      Complementos melhoram a sua experiência de jogo
+    </p>
+    <form action="" onsubmit="return false">
+      <!-- Box de input 1 -->
+      <div class="servico_online_container">
+        <input
+          type="checkbox"
+          name="online_service"
+          class="check_box_input"
+        />
+        <div class="textContainer">
+          <label for="Serviço online">Servidores online</label>
+          <p>Acesso a jogos multiplayer</p>
+        </div>
+        <p class="preco_adicional">+R$ ? mês</p>
+      </div>
+      <!-- Box de input 2 -->
+      <div class="servico_online_container">
+        <input
+          type="checkbox"
+          name="online_service"
+          class="check_box_input"
+        />
+        <div class="textContainer">
+          <label for="Serviço online">Armazenamento maior</label>
+          <p>+ 1TB armazenamento</p>
+        </div>
+        <p class="preco_adicional">+R$? mês</p>
+      </div>
+      <!-- Box de input 3 -->
+      <div class="servico_online_container">
+        <input
+          type="checkbox"
+          name="online_service"
+          class="check_box_input"
+        />
+        <div class="textContainer">
+          <label for="Serviço online">Perfil customizável</label>
+          <p>Tema no seu perfil</p>
+        </div>
+        <p class="preco_adicional">+R$ ? mês</p>
+      </div>
+    </form>
+  </div>`;
+
+    //! Definindo função inicioPagina3 -----------------
+
+    function inicioPagina3() {
+      //! Arrays com os valores de acordo com cada plano ---------------------
+
+      let adicionalMes = [2, 5, 5];
+      let adicionalAno = [50, 100, 100];
+      let valorAdicionais = 0;
+
+      //!Selecionando elementos -----------------------------------------------
+
+      let pPrecos = document.querySelectorAll('.preco_adicional');
+      let checkBoxesInput = document.querySelectorAll('.check_box_input');
+
+      //Utilizando o plano selecionado (ano/mes) para definir o valor dos adicionais
+
+      if (mes === false) {
+        pPrecos.forEach((divPreco, index) => {
+          divPreco.textContent = `+R$ ${adicionalAno[index]}/ano`;
+        });
+      } else {
+        pPrecos.forEach((divPreco, index) => {
+          divPreco.textContent = `+R$ ${adicionalMes[index]}/mês`;
+        });
+      }
+
+      //! Funções -------------------------------------------------------------
+
+      //Utilizando o event listener 'change' para acompanhar se os checkBoxes foram marcado ou desmarcados, e utilizando a verificação se mês ou ano foi selecionado para utilizar o array correspondente para alterar os valores.
+
+      checkBoxesInput.forEach((box, index) => {
+        box.addEventListener('change', (event) => {
+          if (event.currentTarget.checked) {
+            if (mes === false) {
+              valorAdicionais += adicionalAno[index];
+              console.log(valorAdicionais);
+            } else {
+              valorAdicionais += adicionalMes[index];
+              console.log(valorAdicionais);
+            }
+          } else {
+            if (mes === false) {
+              valorAdicionais -= adicionalAno[index];
+              console.log(valorAdicionais);
+            } else {
+              valorAdicionais -= adicionalMes[index];
+              console.log(valorAdicionais);
+            }
+          }
+        });
+      });
+    }
+    inicioPagina3();
   }
 }

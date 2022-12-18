@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="shortcut icon"
+      href="./assets/images/favicon-32x32.png"
+      type="image/x-icon"
+    />
+    <title>Multi step form</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="container_passos">
+        <div class="retangulo_passos">
+          <div class="passo passo1 ativo"><p>1</p></div>
+          <div class="passo passo2"><p>2</p></div>
+          <div class="passo passo3"><p>3</p></div>
+          <div class="passo passo4"><p>4</p></div>
+        </div>
+      </div>
+      <!-- Form  -->
+      <div id="container_pai">
+        <div class="container_adicionais">
+          <h2 class="form_title">Selecione complementos</h2>
+          <p class="form_details">
+            Complementos melhoram a sua experiência de jogo
+          </p>
+          <form action="" onsubmit="return false">
+            <!-- Box de input 1 -->
+            <div class="servico_online_container">
+              <input
+                type="checkbox"
+                name="online_service"
+                id="online_service_input"
+              />
+              <div class="textContainer">
+                <label for="Serviço online">Servidores online</label>
+                <p>Acesso a jogos multiplayer</p>
+              </div>
+              <p class="preco_adicional">+R$ ? mês</p>
+            </div>
+            <!-- Box de input 2 -->
+            <div class="servico_online_container">
+              <input
+                type="checkbox"
+                name="online_service"
+                id="online_service_input"
+              />
+              <div class="textContainer">
+                <label for="Serviço online">Armazenamento maior</label>
+                <p>+ 1TB armazenamento</p>
+              </div>
+              <p class="preco_adicional">+R$? mês</p>
+            </div>
+            <!-- Box de input 3 -->
+            <div class="servico_online_container">
+              <input
+                type="checkbox"
+                name="online_service"
+                id="online_service_input"
+              />
+              <div class="textContainer">
+                <label for="Serviço online">Perfil customizável</label>
+                <p>Tema no seu perfil</p>
+              </div>
+              <p class="preco_adicional">+R$ ? mês</p>
+            </div>
+          </form>
+        </div>
+      </div>
+      <!-- Fim do form -->
+      <footer>
+        <button id="botao_proximo">Próximo</button>
+      </footer>
+    </div>
+
+    <!-- scripts -->
+    <script src="./scripts/script.js"></script>
+    <script src="script3.js"></script>
+    <!-- <script src="./scripts/script2.js"></script> -->
+  </body>
+</html>

@@ -15,12 +15,15 @@ const proximoPasso = document.getElementById('botao_proximo');
 const mensagensErro = document.querySelectorAll('.mensagem_erro');
 //Passos container
 const passosContainer = document.querySelectorAll('.passo');
+
 //! Realizando teste ---------------------------------------------
 const containerPai = document.getElementById('container_pai');
 
 //! Variáveis ------------------------------------------------------------------
 let condition1, condition2, condition3;
 let passoAtivo = 0;
+let mes = false;
+let ano = true;
 
 //! Funções --------------------------------------------------------------------
 
@@ -176,14 +179,14 @@ function trocaAtivo() {
   </div>
 `;
     function inicioPagina2() {
+      //Selecionando as duas tags, mês e ano.
+      const tagAno = document.getElementById('tag_ano');
+      const tagMes = document.getElementById('tag_mes');
+
       //! Fazendo seleção dos elementos necessários ----------------------------------
 
       //Selecionando botão de trocar o plano
       const switchPlan = document.querySelector('#switch_container');
-
-      //Selecionando as duas tags, mês e ano.
-      const tagAno = document.getElementById('tag_ano');
-      const tagMes = document.getElementById('tag_mes');
 
       //Selecionando todos os p de preços
       const pricesTags = document.querySelectorAll('.price_plan');
@@ -231,6 +234,10 @@ function trocaAtivo() {
         switchPlan.classList.toggle('animate2');
         tagAno.classList.toggle('ativo');
         tagMes.classList.toggle('ativo');
+        ano = tagAno.classList.contains('ativo');
+        mes = tagMes.classList.contains('ativo');
+        console.log(ano, mes);
+
         alteraPreco();
       });
 
@@ -238,7 +245,6 @@ function trocaAtivo() {
         plan_card.addEventListener('click', () => {
           removeAtivoPlano();
           plan_card.classList.add('ativo');
-          console.log('estou sendo executado');
           proximoPasso.classList.add('animate');
         });
       });

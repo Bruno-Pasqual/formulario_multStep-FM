@@ -81,11 +81,11 @@ body {
   top: 99px;
 }
 
-#form_title {
+.form_title {
   margin-bottom: 9px;
 }
 
-#form_details {
+.form_details {
   font-weight: 400;
   color: #9699aa;
   margin-bottom: 6px;
@@ -320,4 +320,53 @@ footer {
   100% {
     left: 10px;
   }
+}
+
+/* ! Container adicionais --------------------------------------------- */
+.container_adicionais {
+  height: 383px;
+  width: 343px;
+  background: white;
+  border-radius: 10px;
+  padding: 32px 24px 0 24px;
+  position: absolute;
+  top: 96px;
+  left: 16px;
+}
+
+.servico_online_container {
+  width: 295px;
+  height: 62px;
+  border: 1px solid lightgray;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px;
+  margin-top: 22px;
+  border-radius: 8px;
+}
+
+.servico_online_container input {
+}
+
+.textContainer p {
+  font-size: 12px;
+  width: 155px;
+}
+
+#online_service_input {
+  width: 20px;
+  height: 20px;
+}
+
+.container_adicionais label {
+  color: #022959;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.preco_adicional {
+  color: #483eff;
+  font-weight: 400;
+  font-size: 12px;
 }

@@ -23,47 +23,49 @@
         </div>
       </div>
       <!-- Form  -->
-      <div class="form_container">
-        <h2 id="form_title">Informações pessoais</h2>
-        <p id="form_details">
-          Por favor informe seu nome, endereço de email, e o celular.
-        </p>
-        <form action="">
-          <div class="primeira_linha">
-            <label for="nome_input">Nome</label>
-            <input
-              oninput="checarEntradaNome(nomeInput.value),checarBotao();"
-              type="text"
-              name="nome_input"
-              class="nome_input"
-              placeholder="Ex. Mariana Lopes"
-            />
-            <div class="mensagem_erro">Apenas letras</div>
-          </div>
-          <div class="segunda_linha">
-            <label for="email_input">Endereço de email</label>
-            <input
-              oninput="checarEmail(emailInput.value), checarBotao()"
-              type="email"
-              name="email_input"
-              class="email_input"
-              placeholder="marianalopes@dominio.com"
-            />
-            <div class="mensagem_erro">Email inválido</div>
-          </div>
-          <div class="terceira_linha">
-            <label for="celular_input">Número Celular</label>
-            <input
-              oninput="checarCelular(celularInput.value),checarBotao()"
-              type="number"
-              name="celular_input"
-              placeholder="015-998843662"
-              class="celular_input"
-              maxlength="12"
-            />
-            <div class="mensagem_erro">Não esqueça do DDD (ex. 015)</div>
-          </div>
-        </form>
+      <div id="container_pai">
+        <div class="form_container">
+          <h2 id="form_title">Informações pessoais</h2>
+          <p id="form_details">
+            Por favor informe seu nome, endereço de email, e o celular.
+          </p>
+          <form action="">
+            <div class="primeira_linha">
+              <label for="nome_input">Nome</label>
+              <input
+                oninput="checarEntradaNome(nomeInput.value),checarBotao();"
+                type="text"
+                name="nome_input"
+                class="nome_input"
+                placeholder="Ex. Mariana Lopes"
+              />
+              <div class="mensagem_erro">Apenas letras</div>
+            </div>
+            <div class="segunda_linha">
+              <label for="email_input">Endereço de email</label>
+              <input
+                oninput="checarEmail(emailInput.value), checarBotao()"
+                type="email"
+                name="email_input"
+                class="email_input"
+                placeholder="marianalopes@dominio.com"
+              />
+              <div class="mensagem_erro">Email inválido</div>
+            </div>
+            <div class="terceira_linha">
+              <label for="celular_input">Número Celular</label>
+              <input
+                oninput="checarCelular(celularInput.value),checarBotao()"
+                type="number"
+                name="celular_input"
+                placeholder="015-998843662"
+                class="celular_input"
+                maxlength="12"
+              />
+              <div class="mensagem_erro">Não esqueça do DDD (ex. 015)</div>
+            </div>
+          </form>
+        </div>
       </div>
       <!-- Fim do form -->
       <footer>
@@ -73,6 +75,6 @@
 
     <!-- scripts -->
     <script src="./scripts/script.js"></script>
-    <script src="./scripts/script2.js"></script>
+    <!-- <script src="./scripts/script2.js"></script> -->
   </body>
 </html>

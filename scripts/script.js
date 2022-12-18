@@ -1,3 +1,6 @@
+//!Importando arquivos
+// import { inicioPagina2 } from './script2';
+
 //! Selecionando elementos ----------------------------------------------------
 
 //3 inputs do primeiro form
@@ -12,6 +15,8 @@ const proximoPasso = document.getElementById('botao_proximo');
 const mensagensErro = document.querySelectorAll('.mensagem_erro');
 //Passos container
 const passosContainer = document.querySelectorAll('.passo');
+//! Realizando teste ---------------------------------------------
+const containerPai = document.getElementById('container_pai');
 
 //! Variáveis ------------------------------------------------------------------
 let condition1, condition2, condition3;
@@ -104,7 +109,6 @@ function checarBotao() {
 }
 
 proximoPasso.addEventListener('click', () => {
-  console.log('foi');
   trocaAtivo();
 });
 
@@ -115,6 +119,59 @@ function trocaAtivo() {
   });
   passosContainer[passoAtivo].classList.add('ativo');
   if (passosContainer[1].classList.contains('ativo')) {
-    console.log('Estou na segunda página');
+    containerPai.innerHTML = `<div class="form_container_segundo">
+    <h2 id="form_title">Selecione seu plano</h2>
+    <p id="form_details">Você pode contratar por mês ou por ano.</p>
+    <!-- Primeiro card -->
+    <div class="plan_card">
+      <img
+        src="./assets/images/icon-arcade.svg"
+        alt="ícone do plano"
+        class="plan_icon"
+      />
+      <div class="detalhes_plano">
+        <h3 class="titulo_plano">Arcade</h3>
+        <p class="price_plan">R$ 90/ano</p>
+      </div>
+    </div>
+    <!-- Primeiro card -->
+
+    <!-- Segundo card -->
+    <div class="plan_card">
+      <img
+        src="./assets/images/icon-advanced.svg"
+        alt="ícone do plano"
+        class="plan_icon"
+      />
+      <div class="detalhes_plano">
+        <h3 class="titulo_plano">Avançado</h3>
+        <p class="price_plan">R$ 120/ano</p>
+      </div>
+    </div>
+    <!-- Segundo card -->
+
+    <!-- Terceiro card -->
+    <div class="plan_card">
+      <img
+        src="./assets/images/icon-pro.svg"
+        alt="ícone do plano"
+        class="plan_icon"
+      />
+      <div class="detalhes_plano">
+        <h3 class="titulo_plano">Pro</h3>
+        <p class="price_plan">R$ 150/ano</p>
+      </div>
+    </div>
+    <!-- Terceiro card -->
+    <div class="switch_plan_container">
+      <p id="tag_mes">Mês</p>
+      <div id="switch_container" class="animate"></div>
+      <p id="tag_ano" class="ativo">Ano</p>
+    </div>
+
+    <!-- <footer></footer> -->
+  </div>
+`;
+    inicioPagina2();
   }
 }

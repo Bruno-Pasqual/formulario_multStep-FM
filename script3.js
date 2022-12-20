@@ -79,6 +79,6 @@ function somandoSelecionados() {
 //! Event handlers -------------------------------------------------
 containerComplementos.forEach((container, index) => {
   container.addEventListener('click', () => {
-    // somandoSelecionados();
+    somandoSelecionados();
   });
 });

@@ -403,3 +403,8 @@ footer {
   align-items: center;
   justify-content: space-between;
 }
+
+.servico_online_container {
+  display: flex;
+  align-items: center;
+}

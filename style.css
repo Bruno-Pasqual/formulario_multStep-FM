@@ -46,6 +46,10 @@ nav {
   margin: 0 auto;
 }
 
+.container_info_passo {
+  display: none;
+}
+
 .passo {
   width: 33px;
   height: 33px;
@@ -180,4 +184,39 @@ form .botao_proximo {
     right: 0;
     bottom: -92px;
   }
+
+  #container_dos_passos {
+    display: flex;
+    flex-direction: column;
+    width: 173px;
+    height: 228px;
+    justify-content: space-between;
+  }
+
+  .container_info_passo {
+    display: block;
+    display: grid;
+    place-content: center;
+  }
+
+  .container_passo {
+    display: flex;
+    column-gap: 16px;
+  }
+
+  .primeira_linha {
+    color: #abbcff;
+    font-size: 12px;
+    font-weight: 400;
+    margin-bottom: 3px;
+  }
+
+  .segunda_linha {
+    font-size: 11px;
+    font-weight: 700;
+    color: #ffffff;
+    text-transform: uppercase;
+  }
 }
+
+/* ! Navbar ---------------------------------------  */

@@ -49,15 +49,23 @@
           </div>
           <div class="container_input">
             <label for="input_nome">Nome</label>
-            <input type="text" name="input_nome" id="input_nome" />
+            <input
+              oninput="checaNome()"
+              type="text"
+              name="input_nome"
+              id="input_nome"
+            />
+            <p class="mensagem_erro">Apenas letras</p>
           </div>
           <div class="container_input">
             <label for="input_email">Email</label>
             <input type="text" name="input_email" id="input_email" />
+            <p class="mensagem_erro">sadasdsa</p>
           </div>
           <div class="container_input">
             <label for="input_numero">Telefone (celular)</label>
             <input type="number" name="input_numero" id="input_numero" />
+            <p class="mensagem_erro">sadasdsa</p>
           </div>
           <button class="botao_proximo">Próximo</button>
         </form>

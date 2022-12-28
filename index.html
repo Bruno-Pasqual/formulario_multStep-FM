@@ -5,9 +5,43 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
-    <title>Formulário multi passos</title>
+    <title>Formulário multi etapas</title>
   </head>
   <body>
+    <div class="container">
+      <nav>
+        <div id="container_dos_passos">
+          <div class="passo1 passo">1</div>
+          <div class="passo2 passo">2</div>
+          <div class="passo3 passo">3</div>
+          <div class="passo4 passo">4</div>
+        </div>
+      </nav>
+      <main>
+        <form action="">
+          <div id="cabecalho_formulario">
+            <h2>Informações pessoais</h2>
+            <p>Por favor informe seu nome, endereço de email e o seu celular</p>
+          </div>
+          <div class="container_input">
+            <label for="input_nome">Nome</label>
+            <input type="text" name="input_nome" id="input_nome" />
+          </div>
+          <div class="container_input">
+            <label for="input_email">Email</label>
+            <input type="text" name="input_email" id="input_email" />
+          </div>
+          <div class="container_input">
+            <label for="input_numero">Telefone (celular)</label>
+            <input type="number" name="input_numero" id="input_numero" />
+          </div>
+          <button class="botao_proximo">Próximo</button>
+        </form>
+      </main>
+      <footer>
+        <button class="botao_proximo">Próximo</button>
+      </footer>
+    </div>
     <!-- Scripts -->
     <script src="./scripts/script.js"></script>
   </body>

@@ -4,6 +4,11 @@ const inputNome = document.getElementById('input_nome');
 const inputEmail = document.getElementById('input_email');
 const inputCelular = document.getElementById('input_numero');
 const mensagensErro = document.querySelectorAll('.mensagem_erro');
+const botaoProximo = document.querySelectorAll('.botao_proximo');
+const circulosEtapas = document.querySelectorAll('.passo');
+
+//!Variáveis de controle ------------------------------------------------------
+let etapaAtiva = 0;
 
 //! Funções -------------------------------------------------------------------
 
@@ -17,6 +22,9 @@ function apenasLetras(str) {
   return /^[A-Za-z\s]*$/.test(str);
 }
 //todo ---------------------------------------- Fim expressões regulares
+
+//! -------------------------------------- Funções para validação dos inputs
+//São executadas atráves do onInput=() de cada um dos campos
 
 function checaNome() {
   //todo Função que irá fazer algumas verificações no input do nome e alterará a cor do outline e também a mensagem de erro.
@@ -72,3 +80,15 @@ function checarNumero() {
     mensagensErro[2].style.display = 'none';
   }
 }
+
+//! Event handlers ------------------------------------------------------------
+
+botaoProximo.forEach((e) => {
+  e.addEventListener('click', () => {
+    circulosEtapas.forEach((e) => {
+      e.classList.remove('ativo');
+    });
+    etapaAtiva++;
+    circulosEtapas[etapaAtiva].classList.add('ativo');
+  });
+});

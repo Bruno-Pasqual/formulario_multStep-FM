@@ -12,7 +12,7 @@
       <nav>
         <div id="container_dos_passos">
           <div class="container_passo">
-            <div class="passo1 passo">1</div>
+            <div class="passo1 passo ativo">1</div>
             <div class="container_info_passo">
               <p class="primeira_linha">ETAPA 1</p>
               <p class="segunda_linha">Suas informações</p>
@@ -42,7 +42,7 @@
         </div>
       </nav>
       <main>
-        <form action="">
+        <form action="" onsubmit="return false">
           <div id="cabecalho_formulario">
             <h2>Informações pessoais</h2>
             <p>Por favor informe seu nome, endereço de email e o seu celular</p>
@@ -81,6 +81,7 @@
         </form>
       </main>
       <footer>
+        <button class="botao_voltar">Voltar</button>
         <button class="botao_proximo">Próximo</button>
       </footer>
     </div>

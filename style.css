@@ -129,8 +129,11 @@ footer {
   width: 375px;
   height: 72px;
   background: white;
-  padding: 16px 16px 16px 262px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   border-radius: 0 0 15px 15px;
+  padding: 0 16px;
 }
 
 .botao_proximo {
@@ -140,6 +143,16 @@ footer {
   border-radius: 4px;
   color: white;
   font-weight: 500px;
+}
+
+.botao_voltar {
+  width: 97px;
+  height: 40px;
+  color: #9699aa;
+  background: none;
+  border: none;
+  font-size: 14px;
+  font-weight: 500;
 }
 
 form .botao_proximo {

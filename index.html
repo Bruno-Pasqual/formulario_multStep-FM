@@ -59,12 +59,22 @@
           </div>
           <div class="container_input">
             <label for="input_email">Email</label>
-            <input type="text" name="input_email" id="input_email" />
+            <input
+              oninput="checarEmail()"
+              type="text"
+              name="input_email"
+              id="input_email"
+            />
             <p class="mensagem_erro">sadasdsa</p>
           </div>
           <div class="container_input">
             <label for="input_numero">Telefone (celular)</label>
-            <input type="number" name="input_numero" id="input_numero" />
+            <input
+              oninput="checarNumero()"
+              type="number"
+              name="input_numero"
+              id="input_numero"
+            />
             <p class="mensagem_erro">sadasdsa</p>
           </div>
           <button class="botao_proximo">Próximo</button>

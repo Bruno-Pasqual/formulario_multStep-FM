@@ -43,7 +43,7 @@
       </nav>
       <main>
         <form action="" onsubmit="return false">
-          <div id="cabecalho_formulario">
+          <div class="cabecalho">
             <h2>Informações pessoais</h2>
             <p>Por favor informe seu nome, endereço de email e o seu celular</p>
           </div>
@@ -80,51 +80,76 @@
             />
             <p class="mensagem_erro">sadasdsa</p>
           </div>
-          <button class="botao_proximo desabilitado" disabled>Próximo</button>
         </form>
+        <div class="container_plano_pai">
+          <div class="cabecalho">
+            <h2>Selecione seu plano</h2>
+            <p>Você tem a opções de ser cobrado por mês ou ano</p>
+          </div>
+          <div id="container_dos_planos">
+            <div class="card_plano">
+              <img src="./assets/images/icon-arcade.svg" alt="" />
+              <div class="info_plano">
+                <p class="titulo_plano">Arcade</p>
+                <p class="valor_plano">R$ 9/mês</p>
+              </div>
+            </div>
+            <div class="card_plano">
+              <img src="./assets/images/icon-advanced.svg" alt="" />
+              <div class="info_plano">
+                <p class="titulo_plano">Avançado</p>
+                <p class="valor_plano">R$ 12/mês</p>
+              </div>
+            </div>
+            <div class="card_plano">
+              <img src="./assets/images/icon-pro.svg" alt="" />
+              <div class="info_plano">
+                <p class="titulo_plano">Pro</p>
+                <p class="valor_plano">R$ 15/mês</p>
+              </div>
+            </div>
+          </div>
+          <div id="container_troca_pagamento">
+            <p>Mês</p>
+            <div id="container_switch">
+              <div id="circulo_switch"></div>
+            </div>
+            <p>Ano</p>
+          </div>
+        </div>
+        <div id="container_adicionais_pai">
+          <div class="cabecalho">
+            <h2>Selecione os incrementos</h2>
+            <p>Os incrementos ajudam a melhorar a sua experiência de jogo</p>
+          </div>
+          <div id="container_dos_adicionais">
+            <div class="box_do_adicional">
+              <input
+                type="checkbox"
+                name="checkbox1"
+                id="check_box1"
+                class="checkbox_input"
+              />
+              <div class="container_detalhes">
+                <p class="nome_do_adicional">Serviço online</p>
+                <p class="descricao_do_adicional">
+                  Acesso a jogos multijogadores
+                </p>
+              </div>
+              <p class="preco_adicional">+R$5/mês</p>
+            </div>
+            <div class="box_adicionais"></div>
+            <div class="box_adicionais"></div>
+          </div>
+        </div>
+        <button class="botao_proximo desabilitado" disabled>Próximo</button>
       </main>
       <footer>
         <button class="botao_voltar">Voltar</button>
-        <button class="botao_proximo">Próximo</button>
+        <button class="botao_proximo desabilitado">Próximo</button>
       </footer>
     </div>
     <!-- Scripts -->
     <script src="./scripts/script.js"></script>
   </body>
-  <div class="container_plano">
-    <div id="cabecalho_formulario">
-      <h2>Selecione seu plano</h2>
-      <p>Você tem a opções de ser cobrado por mês ou ano</p>
-    </div>
-    <div id="container_dos_planos">
-      <div class="card_plano">
-        <img src="./assets/images/icon-arcade.svg" alt="" />
-        <div class="info_plano">
-          <p class="titulo_plano">Arcade</p>
-          <p class="valor_plano">R$ 9/mês</p>
-        </div>
-      </div>
-      <div class="card_plano">
-        <img src="./assets/images/icon-advanced.svg" alt="" />
-        <div class="info_plano">
-          <p class="titulo_plano">Avançado</p>
-          <p class="valor_plano">R$ 12/mês</p>
-        </div>
-      </div>
-      <div class="card_plano">
-        <img src="./assets/images/icon-pro.svg" alt="" />
-        <div class="info_plano">
-          <p class="titulo_plano">Pro</p>
-          <p class="valor_plano">R$ 15/mês</p>
-        </div>
-      </div>
-    </div>
-    <div id="container_troca_pagamento">
-      <p>Mês</p>
-      <div id="container_switch">
-        <div id="circulo_switch"></div>
-      </div>
-      <p>Ano</p>
-    </div>
-  </div>
 </html>

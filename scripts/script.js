@@ -93,6 +93,8 @@ botaoProximo.forEach((e) => {
     });
     circulosEtapas[etapaAtiva].classList.add('ativo');
     circulosEtapas[3].classList.contains('ativo') ? '' : etapaAtiva++;
+
+    //-----
   });
 });
 

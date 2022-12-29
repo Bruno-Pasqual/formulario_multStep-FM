@@ -79,6 +79,13 @@ main {
   transform: translate(-50%, -50%);
   top: 43.5%;
   left: 50%;
+  display: grid;
+  place-content: center;
+  /* border: 1px solid red; */
+}
+
+form {
+  display: none;
 }
 
 main h2 {
@@ -180,7 +187,10 @@ footer {
   font-weight: 500;
 }
 
-form .botao_proximo {
+main .botao_proximo {
+  position: absolute;
+  bottom: -100px;
+  right: 0;
   display: none;
 }
 
@@ -195,11 +205,14 @@ form .botao_proximo {
 }
 
 /* ! Editando tela selecione plano ---------------------------- */
-.container_plano {
-  height: 500px;
+.container_plano_pai {
+  height: 470px;
   width: 343px;
-  border: 1px solid black;
   padding: 32px 23px;
+  margin-top: 80px;
+  background: white;
+  border-radius: 10px;
+  display: none;
 }
 
 #container_dos_planos {
@@ -209,7 +222,6 @@ form .botao_proximo {
   flex-direction: column;
   row-gap: 12px;
   margin: 22px 0 24px 0;
-  border: 1px solid red;
 }
 
 .card_plano {
@@ -282,9 +294,40 @@ form .botao_proximo {
   left: 10px;
 }
 
+/* ! Tela dos adicionais ---------------------------------------------------- */
+.box_do_adicional {
+  width: 295px;
+  height: 62px;
+  display: flex;
+  align-items: center;
+}
+
+.checkbox_input {
+  width: 20px;
+  height: 20px;
+}
+
+.container_detalhes {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  border: 1px solid red;
+}
+.nome_do_adicional {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 500;
+  color: #022959;
+}
+
+.descricao_do_adicional {
+  font-size: 12px;
+  margin: 0;
+}
+
 /* todo Media queries ------------------------------------------------------ */
 
-@media (min-width: 1100px) {
+@media (min-width: 900px) {
   .container {
     width: 940px;
     height: 600px;
@@ -320,7 +363,7 @@ form .botao_proximo {
     display: none;
   }
 
-  form .botao_proximo {
+  main .botao_proximo {
     display: block;
     position: absolute;
     right: 0;
@@ -377,21 +420,50 @@ form .botao_proximo {
 
   /* Começando alterações da tela de seleção de plano  ---------- */
 
-  .container_plano {
+  .container_plano_pai {
     width: 450px;
     height: 348px;
     padding: 0px 0px 0px 0px;
+    margin-top: 0;
   }
 
   #container_dos_planos {
     display: flex;
     flex-direction: row;
-    background: red;
+    width: 450px;
+    height: 160px;
+    column-gap: 18px;
+    margin: 0;
+    margin-top: 40px;
   }
 
   .card_plano {
     width: 138px;
     height: 160px;
     flex-direction: column;
+    column-gap: 0;
+    align-items: flex-start;
+    padding-top: 20px;
+  }
+
+  .card_plano img {
+    margin-bottom: 39px;
+  }
+
+  #container_troca_pagamento {
+    width: 450px;
+    margin-top: 32px;
+  }
+
+  .cabecalho h2 {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 11px;
+  }
+
+  .cabecalho p {
+    font-size: 16px;
+    font-weight: 400;
+    color: #9699aa;
   }
 }

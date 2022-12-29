@@ -88,14 +88,14 @@ form {
   display: none;
 }
 
-main h2 {
+.cabecalho h2 {
   font-size: 24px;
   font-weight: 700;
   color: #022959;
   margin-bottom: 9px;
 }
 
-main p {
+.cabecalho p {
   font-size: 16px;
   font-weight: 400;
   color: #9699aa;
@@ -294,35 +294,60 @@ main .botao_proximo {
   left: 10px;
 }
 
-/* ! Tela dos adicionais ---------------------------------------------------- */
-.box_do_adicional {
+/* ! Container adicionais --------------------------------------------- */
+
+#pagina_adicional {
+  width: 343px;
+  height: 383px;
+  padding: 32px 24px;
+}
+
+#container_adicionais_pai {
   width: 295px;
-  height: 62px;
+  height: 210px;
+  display: grid;
+  row-gap: 12px;
+}
+
+.container_adicionais {
   display: flex;
   align-items: center;
+  border: 1px solid #d6d9e6;
+  width: 295px;
+  height: 62px;
+  border-radius: 8px;
+  padding: 16px 11px;
+}
+
+.container_adicionais.selecionado {
+  background: #f8f9ff;
+  border: 1px solid #483eff;
 }
 
 .checkbox_input {
   width: 20px;
   height: 20px;
+  margin-right: 16px;
 }
 
-.container_detalhes {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  border: 1px solid red;
-}
-.nome_do_adicional {
-  margin: 0;
-  font-size: 15px;
-  font-weight: 500;
+.titulo_adicionais {
   color: #022959;
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 3px;
 }
 
-.descricao_do_adicional {
+.detalhes_adicionais {
   font-size: 12px;
-  margin: 0;
+  font-weight: 400;
+  color: #9699aa;
+}
+
+.preco_adicionais {
+  font-size: 12px;
+  font-weight: 400;
+  color: #483eff;
+  margin-left: 29px;
 }
 
 /* todo Media queries ------------------------------------------------------ */
@@ -419,40 +444,10 @@ main .botao_proximo {
   }
 
   /* Começando alterações da tela de seleção de plano  ---------- */
-
-  .container_plano_pai {
+  #pagina_adicional {
+    width: 383px;
     width: 450px;
-    height: 348px;
-    padding: 0px 0px 0px 0px;
-    margin-top: 0;
-  }
-
-  #container_dos_planos {
-    display: flex;
-    flex-direction: row;
-    width: 450px;
-    height: 160px;
-    column-gap: 18px;
-    margin: 0;
-    margin-top: 40px;
-  }
-
-  .card_plano {
-    width: 138px;
-    height: 160px;
-    flex-direction: column;
-    column-gap: 0;
-    align-items: flex-start;
-    padding-top: 20px;
-  }
-
-  .card_plano img {
-    margin-bottom: 39px;
-  }
-
-  #container_troca_pagamento {
-    width: 450px;
-    margin-top: 32px;
+    padding: 0;
   }
 
   .cabecalho h2 {
@@ -461,9 +456,44 @@ main .botao_proximo {
     margin-bottom: 11px;
   }
 
-  .cabecalho p {
+  #container_adicionais_pai {
+    width: 450px;
+    height: 275px;
+  }
+
+  .container_adicionais {
+    width: 450px;
+    height: 81px;
+    padding: 16px 24px 20px 24px;
+  }
+
+  .container_adicionais:hover {
+    cursor: pointer;
+    border: 1px solid #483eff;
+  }
+
+  .checkbox_input:hover {
+    cursor: pointer;
+  }
+
+  .checkbox_input {
+    margin-right: 24px;
+  }
+
+  .preco_adicionais {
+    margin-left: auto;
+  }
+
+  .titulo_adicionais {
     font-size: 16px;
-    font-weight: 400;
-    color: #9699aa;
+    margin-bottom: 7px;
+  }
+
+  .detalhes_adicionais {
+    font-size: 15px;
+  }
+
+  .preco_adicionais {
+    font-size: 15px;
   }
 }

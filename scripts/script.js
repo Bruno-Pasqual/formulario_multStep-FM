@@ -40,6 +40,7 @@ function checaNome() {
   } else {
     inputNome.style.outline = '1px solid green ';
     mensagensErro[0].style.display = 'none';
+    return true;
   }
 }
 
@@ -57,6 +58,7 @@ function checarEmail() {
   } else {
     inputEmail.style.outline = '1px solid green ';
     mensagensErro[1].style.display = 'none';
+    return true;
   }
 }
 
@@ -78,6 +80,7 @@ function checarNumero() {
   } else {
     inputCelular.style.outline = '1px solid green';
     mensagensErro[2].style.display = 'none';
+    return true;
   }
 }
 
@@ -88,7 +91,17 @@ botaoProximo.forEach((e) => {
     circulosEtapas.forEach((e) => {
       e.classList.remove('ativo');
     });
-    etapaAtiva++;
     circulosEtapas[etapaAtiva].classList.add('ativo');
+    circulosEtapas[3].classList.contains('ativo') ? '' : etapaAtiva++;
   });
 });
+
+function checaCondicoesForm() {
+  if (checaNome() && checarEmail() && checarNumero()) {
+    botaoProximo.forEach((elemento) => {
+      elemento.classList.remove('desabilitado');
+      elemento.disabled = false;
+      elemento.classList.add('animate');
+    });
+  }
+}

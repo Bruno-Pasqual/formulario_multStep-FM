@@ -31,10 +31,12 @@ let informacoes = {
     [5, 10, 10],
     [50, 100, 100],
   ],
+  escolhaPlano: ['mês', 'ano'],
+
   escolhas: {
     plano: 0,
     tipoCobranca: 0,
-    adicionais: [],
+    adicionais: [false, false, false],
   },
 };
 console.log(informacoes.preco_planos[0][1]);
@@ -220,15 +222,21 @@ function scriptPaginaPlanos() {
 //todo  ----------------------------------------- <<<<<<<<<<<<<<<<<<<<<<<<<<<
 
 function scriptPaginaAdicionais() {
-  precosAdicionais.forEach((elemento) => {
+  console.log(informacoes);
+
+  precosAdicionais.forEach((elemento, index) => {
+    //For each que irá fazer a alteração da mensagem e do preço mostrado de acordo com o que for selecionado pelo usuário.
+
     elemento.textContent = `+R$${
-      informacoes.escolhas.adicionais[informacoes.escolhas.tipoCobranca]
-    }`;
+      informacoes.preco_adicionais[informacoes.escolhas.tipoCobranca][index]
+    }/${informacoes.escolhaPlano[informacoes.escolhas.tipoCobranca]}`;
   });
-  console.log(informacoes.escolhas.tipoCobranca);
+
   checkBoxes.forEach((elemento, index) => {
-    elemento.addEventListener('change', () => {
+    elemento.addEventListener('click', () => {
+      console.log(elemento.checked);
       informacoes.escolhas.adicionais[index] = elemento.checked;
+      console.log(informacoes.escolhas.adicionais);
     });
   });
 }

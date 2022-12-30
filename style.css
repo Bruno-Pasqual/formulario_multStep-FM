@@ -84,7 +84,7 @@ main {
 }
 
 form {
-  display: none;
+  /* display: none; */
 }
 
 .cabecalho h2 {
@@ -364,7 +364,7 @@ main .botao_proximo {
   font-size: 12px;
   font-weight: 400;
   color: #483eff;
-  margin-left: 29px;
+  margin-left: auto;
 }
 
 /* ! Pagina finalização/confirmação ----------------------------------------- */

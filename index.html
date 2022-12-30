@@ -42,7 +42,14 @@
         </div>
       </nav>
       <main>
-        <form action="" onsubmit="return false">
+        <!-- Form -------------- -->
+
+        <form
+          id="form_container"
+          action=""
+          onsubmit="return false"
+          class="ativo"
+        >
           <div class="cabecalho">
             <h2>Informações pessoais</h2>
             <p>Por favor informe seu nome, endereço de email e o seu celular</p>
@@ -81,6 +88,10 @@
             <p class="mensagem_erro">sadasdsa</p>
           </div>
         </form>
+
+        <!-- Form -------------- -->
+        <!-- Container planos pai ---------------- -->
+
         <div class="container_plano_pai">
           <div class="cabecalho">
             <h2>Selecione seu plano</h2>
@@ -95,7 +106,8 @@
               />
               <div class="info_plano">
                 <p class="titulo_plano">Arcade</p>
-                <p class="valor_plano">R$ 9/mês</p>
+                <p class="valor_plano">R$ 45/mês</p>
+                <p class="bonus_ano">2 meses grátis</p>
               </div>
             </div>
             <div class="card_plano">
@@ -106,7 +118,8 @@
               />
               <div class="info_plano">
                 <p class="titulo_plano">Avançado</p>
-                <p class="valor_plano">R$ 12/mês</p>
+                <p class="valor_plano">R$ 60/mês</p>
+                <p class="bonus_ano">2 meses grátis</p>
               </div>
             </div>
             <div class="card_plano">
@@ -117,18 +130,23 @@
               />
               <div class="info_plano">
                 <p class="titulo_plano">Pro</p>
-                <p class="valor_plano">R$ 15/mês</p>
+                <p class="valor_plano">R$ 75/mês</p>
+                <p class="bonus_ano">2 meses grátis</p>
               </div>
             </div>
           </div>
           <div id="container_troca_pagamento">
             <p class="opcao_pagamento ativo">Mês</p>
             <div id="container_switch">
-              <div id="circulo_switch"></div>
+              <div id="circulo_switch" class=""></div>
             </div>
             <p class="opcao_pagamento">Ano</p>
           </div>
         </div>
+
+        <!-- Container planos pai ---------------- -->
+        <!-- Container página adicional ---------- -->
+
         <div id="pagina_adicional">
           <div class="cabecalho">
             <h2>Selecione Complementos</h2>
@@ -163,6 +181,10 @@
             </div>
           </div>
         </div>
+
+        <!-- Container página adicional ---------- -->
+        <!-- Página finalização ------------------ -->
+
         <div id="pagina_finalizacao">
           <div class="cabecalho">
             <h2>Confirmação</h2>
@@ -193,6 +215,9 @@
             </div>
           </div>
         </div>
+
+        <!-- Página finalização ------------------ -->
+
         <div id="pagina_obrigado">
           <img
             src="./assets/images/icon-thank-you.svg"
@@ -212,7 +237,7 @@
       </main>
       <footer>
         <button class="botao_voltar">Voltar</button>
-        <button class="botao_proximo desabilitado" disabled>Próximo</button>
+        <button class="botao_proximo desabilitado">Próximo</button>
       </footer>
     </div>
     <!-- Scripts -->

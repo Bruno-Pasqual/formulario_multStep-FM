@@ -234,6 +234,7 @@ main .botao_proximo {
   justify-content: left;
   padding-left: 16px;
   column-gap: 14px;
+  transition: all 0.5s;
 }
 
 .titulo_plano {
@@ -287,6 +288,26 @@ main .botao_proximo {
   position: absolute;
   top: 50%;
   left: 10px;
+}
+
+#circulo_switch {
+  transition: all 0.5s;
+}
+
+#circulo_switch.ano {
+  margin-left: 17px;
+}
+
+.bonus_ano {
+  font-size: 12px;
+  font-weight: 400;
+  color: #022959;
+  opacity: 0;
+  transition: all 0.5s;
+}
+
+.bonus_ano.mostra {
+  opacity: 1;
 }
 
 /* ! Container adicionais --------------------------------------------- */
@@ -465,7 +486,10 @@ h3 {
   color: #9699aa;
 }
 
-#container_troca_pagamento p.ativo {
+.opcao_pagamento {
+  transition: all 0.5s;
+}
+#container_troca_pagamento .opcao_pagamento.ativo {
   color: #022959;
   font-weight: 800;
   font-size: 14px;
@@ -570,7 +594,8 @@ h3 {
     cursor: pointer;
   }
 
-  /* Container plano pai ----------------------------------------- */
+  /*! Container plano pai ----------------------------------------- */
+
   .container_plano_pai {
     width: 450px;
     height: 371px;
@@ -597,7 +622,7 @@ h3 {
   }
 
   .info_plano {
-    margin: 0 45px 16px 0px;
+    margin: 0 30px 16px 0px;
   }
 
   #container_troca_pagamento {
@@ -608,7 +633,8 @@ h3 {
     width: 38px;
   }
 
-  /* Começando alterações da tela de seleção de plano  ---------- */
+  /*!  Página adicionais ------------------------------- */
+
   #pagina_adicional {
     width: 383px;
     width: 450px;
@@ -662,7 +688,7 @@ h3 {
     font-size: 15px;
   }
 
-  /* Página de confirmação -------------------- */
+  /*! Página de confirmação ----------------------------------- */
 
   #pagina_finalizacao {
     top: 0;

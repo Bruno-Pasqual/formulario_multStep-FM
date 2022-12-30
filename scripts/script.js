@@ -4,7 +4,7 @@ const inputNome = document.getElementById('input_nome');
 const inputEmail = document.getElementById('input_email');
 const inputCelular = document.getElementById('input_numero');
 const mensagensErro = document.querySelectorAll('.mensagem_erro');
-const botaoProximo = document.querySelectorAll('.botao_proximo');
+const botaoProximo = document.querySelector('.botao_proximo');
 const circulosEtapas = document.querySelectorAll('.passo');
 
 //!Variáveis de controle ------------------------------------------------------
@@ -86,24 +86,20 @@ function checarNumero() {
 
 //! Event handlers ------------------------------------------------------------
 
-botaoProximo.forEach((e) => {
-  e.addEventListener('click', () => {
-    circulosEtapas.forEach((e) => {
-      e.classList.remove('ativo');
-    });
-    circulosEtapas[etapaAtiva].classList.add('ativo');
-    circulosEtapas[3].classList.contains('ativo') ? '' : etapaAtiva++;
-
-    //-----
+botaoProximo.addEventListener('click', () => {
+  circulosEtapas.forEach((e) => {
+    e.classList.remove('ativo');
   });
+  circulosEtapas[etapaAtiva].classList.add('ativo');
+  circulosEtapas[3].classList.contains('ativo') ? '' : etapaAtiva++;
+
+  //-----
 });
 
 function checaCondicoesForm() {
   if (checaNome() && checarEmail() && checarNumero()) {
-    botaoProximo.forEach((elemento) => {
-      elemento.classList.remove('desabilitado');
-      elemento.disabled = false;
-      elemento.classList.add('animate');
-    });
+    botaoProximo.classList.remove('desabilitado');
+    botaoProximo.disabled = false;
+    botaoProximo.classList.add('animate');
   }
 }

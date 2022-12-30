@@ -84,6 +84,7 @@ main {
 }
 
 form {
+  /* display: none; */
 }
 
 .cabecalho h2 {
@@ -267,10 +268,6 @@ main .botao_proximo {
   color: #9699aa;
   font-size: 14px;
   font-weight: 500;
-}
-
-#container_troca_pagamento p.selecionado {
-  color: red;
 }
 
 #container_switch {
@@ -468,6 +465,12 @@ h3 {
   color: #9699aa;
 }
 
+#container_troca_pagamento p.ativo {
+  color: #022959;
+  font-weight: 800;
+  font-size: 14px;
+}
+
 /* todo Media queries ------------------------------------------------------ */
 
 @media (min-width: 900px) {
@@ -565,6 +568,44 @@ h3 {
 
   #container_switch:hover {
     cursor: pointer;
+  }
+
+  /* Container plano pai ----------------------------------------- */
+  .container_plano_pai {
+    width: 450px;
+    height: 371px;
+    padding: 0;
+  }
+
+  #container_dos_planos {
+    width: 450px;
+    height: 183px;
+    flex-direction: row;
+    column-gap: 18px;
+  }
+
+  .card_plano {
+    width: 138px;
+    height: 183px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .icone_do_plano {
+    width: 40px;
+    margin: 20px 82px 39px 16px;
+  }
+
+  .info_plano {
+    margin: 0 45px 16px 0px;
+  }
+
+  #container_troca_pagamento {
+    width: 450px;
+  }
+
+  #container_switch {
+    width: 38px;
   }
 
   /* Começando alterações da tela de seleção de plano  ---------- */

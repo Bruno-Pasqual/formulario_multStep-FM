@@ -8,7 +8,8 @@ const botaoProximo = document.querySelector('.botao_proximo');
 const circulosEtapas = document.querySelectorAll('.passo');
 //Fazendo seleção dos containers para uso
 const ContainerForm = document.getElementById('form_container');
-//Seleções da página "planos" --
+
+//Seleções da página "planos" ----
 const containerPlano = document.querySelector('.container_plano_pai');
 const cardsPlanos = document.querySelectorAll('.card_plano');
 const containerSwitch = document.getElementById('container_switch');
@@ -17,13 +18,23 @@ const opcoesPagamento = document.querySelectorAll('.opcao_pagamento');
 const valoresPlanos = document.querySelectorAll('.valor_plano');
 const bonusAno = document.querySelectorAll('.bonus_ano');
 
+//Seleção elementos da página "adicionais"---
+const containerAdicionais = document.getElementById('pagina_adicional');
+const checkBoxes = document.querySelectorAll('.checkbox_input');
+const precosAdicionais = document.querySelectorAll('.preco_adicionais');
+
 //!Variáveis de controle ------------------------------------------------------
 let etapaAtiva = 0;
 let informacoes = {
   preco_planos: [(mes = [45, 60, 75]), (ano = [450, 600, 750])],
+  preco_adicionais: [
+    [5, 10, 10],
+    [50, 100, 100],
+  ],
   escolhas: {
     plano: 0,
     tipoCobranca: 0,
+    adicionais: [],
   },
 };
 console.log(informacoes.preco_planos[0][1]);
@@ -121,6 +132,10 @@ function checarEtapa() {
     containerPlano.style.display = 'block';
     scriptPaginaPlanos();
   } else if (circulosEtapas[2].classList.contains('ativo')) {
+    containerPlano.style.display = 'none';
+    containerAdicionais.style.display = 'block';
+    scriptPaginaAdicionais();
+
     console.log('estou na página "2"');
   } else if (circulosEtapas[3].classList.contains('ativo')) {
     console.log('estou na página 3');
@@ -199,6 +214,24 @@ function scriptPaginaPlanos() {
   // console.log(informacoes);
 }
 // ---------------------------------------------------------ScriptPaginaPlanos()
+
+//todo  ----------------------------------------- <<<<<<<<<<<<<<<<<<<<<<<<<<<
+//todo Continuar aqui, estava pensando em como puxar de volta os valores que estão no objeto para escolher qual array utilizar
+//todo  ----------------------------------------- <<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+function scriptPaginaAdicionais() {
+  precosAdicionais.forEach((elemento) => {
+    elemento.textContent = `+R$${
+      informacoes.escolhas.adicionais[informacoes.escolhas.tipoCobranca]
+    }`;
+  });
+  console.log(informacoes.escolhas.tipoCobranca);
+  checkBoxes.forEach((elemento, index) => {
+    elemento.addEventListener('change', () => {
+      informacoes.escolhas.adicionais[index] = elemento.checked;
+    });
+  });
+}
 
 // Executando script, começo !
 checarEtapa();

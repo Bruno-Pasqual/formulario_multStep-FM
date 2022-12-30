@@ -23,6 +23,9 @@ const containerAdicionais = document.getElementById('pagina_adicional');
 const checkBoxes = document.querySelectorAll('.checkbox_input');
 const precosAdicionais = document.querySelectorAll('.preco_adicionais');
 
+//Seleção elementos da página "confirmação"----
+const containerConfirmacao = document.getElementById('pagina_finalizacao');
+
 //!Variáveis de controle ------------------------------------------------------
 let etapaAtiva = 0;
 let informacoes = {
@@ -140,7 +143,9 @@ function checarEtapa() {
 
     console.log('estou na página "2"');
   } else if (circulosEtapas[3].classList.contains('ativo')) {
-    console.log('estou na página 3');
+    containerAdicionais.style.display = 'none';
+    containerConfirmacao.style.display = 'block';
+    scriptPaginaConfirmacao();
   }
 }
 
@@ -217,10 +222,7 @@ function scriptPaginaPlanos() {
 }
 // ---------------------------------------------------------ScriptPaginaPlanos()
 
-//todo  ----------------------------------------- <<<<<<<<<<<<<<<<<<<<<<<<<<<
-//todo Continuar aqui, estava pensando em como puxar de volta os valores que estão no objeto para escolher qual array utilizar
-//todo  ----------------------------------------- <<<<<<<<<<<<<<<<<<<<<<<<<<<
-
+// --------------------------------------------------- ScriptPaginaAdicionais()
 function scriptPaginaAdicionais() {
   console.log(informacoes);
 
@@ -234,11 +236,14 @@ function scriptPaginaAdicionais() {
 
   checkBoxes.forEach((elemento, index) => {
     elemento.addEventListener('click', () => {
-      console.log(elemento.checked);
       informacoes.escolhas.adicionais[index] = elemento.checked;
-      console.log(informacoes.escolhas.adicionais);
     });
   });
+}
+// --------------------------------------------------- ScriptPaginaAdicionais()
+function scriptPaginaConfirmacao() {
+  containerAdicionais.style.display = 'none';
+  containerConfirmacao.style.display = 'block';
 }
 
 // Executando script, começo !

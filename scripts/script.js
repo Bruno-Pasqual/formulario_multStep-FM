@@ -5,6 +5,7 @@ const inputEmail = document.getElementById('input_email');
 const inputCelular = document.getElementById('input_numero');
 const mensagensErro = document.querySelectorAll('.mensagem_erro');
 const botaoProximo = document.querySelector('.botao_proximo');
+const botaoVoltar = document.querySelector('.botao_voltar');
 const circulosEtapas = document.querySelectorAll('.passo');
 const footerContainer = document.querySelector('footer');
 //Fazendo seleção dos containers para uso
@@ -140,15 +141,25 @@ function checaCondicoesForm() {
     botaoProximo.classList.remove('desabilitado');
     botaoProximo.disabled = false;
     botaoProximo.classList.add('animate');
+  } else {
+    botaoProximo.classList.add('desabilitado');
+    botaoProximo.disabled = true;
+    botaoProximo.classList.remove('animate');
   }
 }
 
 function checarEtapa() {
   //todo Função que irá fazer a verificação em qual página o usuário se encontra, e executara o script correspondente a cada página.
 
-  if (circulosEtapas[1].classList.contains('ativo')) {
+  if (circulosEtapas[0].classList.contains('ativo')) {
+    botaoVoltar.style.display = 'none';
+    ContainerForm.style.display = 'block';
+    footerContainer.style.paddingLeft = '370px';
+  } else if (circulosEtapas[1].classList.contains('ativo')) {
     ContainerForm.style.display = 'none';
     containerPlano.style.display = 'block';
+    footerContainer.style.paddingLeft = '0';
+    botaoVoltar.style.display = 'block';
     scriptPaginaPlanos();
   } else if (circulosEtapas[2].classList.contains('ativo')) {
     containerPlano.style.display = 'none';
@@ -162,6 +173,8 @@ function checarEtapa() {
 }
 
 //! Event handlers ------------------------------------------------------------
+
+//! ----------- botão próximo
 
 botaoProximo.addEventListener('click', () => {
   if (circulosEtapas[3].classList.contains('ativo')) {
@@ -180,6 +193,21 @@ botaoProximo.addEventListener('click', () => {
 
   //-----
 });
+
+//! --------------- Botão voltar
+botaoVoltar.addEventListener('click', () => {
+  console.log('fui clicado');
+  containerPlano.style.display = 'none';
+  containerAdicionais.style.display = 'none';
+  containerConfirmacao.style.display = 'none';
+  circulosEtapas.forEach((e) => {
+    e.classList.remove('ativo');
+  });
+  etapaAtiva--;
+  circulosEtapas[etapaAtiva].classList.add('ativo');
+  checarEtapa();
+});
+
 // ---------------------------------------------------------ScriptPaginaPlanos()
 function scriptPaginaPlanos() {
   //Desativando o botão até que o usuário selecione algo

@@ -12,7 +12,7 @@
       <nav>
         <div id="container_dos_passos">
           <div class="container_passo">
-            <div class="passo1 passo">1</div>
+            <div class="passo1 passo ativo">1</div>
             <div class="container_info_passo">
               <p class="primeira_linha">ETAPA 1</p>
               <p class="segunda_linha">Suas informações</p>
@@ -57,30 +57,30 @@
           <div class="container_input">
             <label for="input_nome">Nome</label>
             <input
-              oninput="checaNome()"
+              oninput="checaNome(),checaCondicoesForm()"
               type="text"
               name="input_nome"
               id="input_nome"
-              onchange="checaCondicoesForm()"
+              onchange=""
             />
             <p class="mensagem_erro">Apenas letras</p>
           </div>
           <div class="container_input">
             <label for="input_email">Email</label>
             <input
-              oninput="checarEmail()"
+              oninput="checarEmail(),checaCondicoesForm()"
               type="text"
               name="input_email"
               id="input_email"
-              onchange="checaCondicoesForm()"
+              onchange=""
             />
             <p class="mensagem_erro">sadasdsa</p>
           </div>
           <div class="container_input">
             <label for="input_numero">Telefone (celular)</label>
             <input
-              onchange="checaCondicoesForm()"
-              oninput="checarNumero()"
+              onchange=""
+              oninput="checarNumero(),checaCondicoesForm()"
               type="number"
               name="input_numero"
               id="input_numero"
@@ -209,7 +209,7 @@
                 <p class="valor_adicional_escolhido">+R$10/mês</p>
               </div>
               <div class="adicional_escolhido">
-                <p class="nome_adicional">Armazenamento maior</p>
+                <p class="nome_adicional">Perfil customomizável</p>
                 <p class="valor_adicional_escolhido">+R$10/mês</p>
               </div>
             </div>

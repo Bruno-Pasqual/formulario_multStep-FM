@@ -208,7 +208,22 @@ botaoVoltar.addEventListener('click', () => {
 
 // ---------------------------------------------------------ScriptPaginaPlanos()
 function scriptPaginaPlanos() {
-  //Desativando o botão até que o usuário selecione algo
+  console.log(etapaAtiva);
+  //Deixando a página em seu estado inicial
+  circuloSwitch.classList.remove('ano');
+  bonusAno.forEach((elemento) => {
+    elemento.classList.remove('mostra');
+  });
+  opcoesPagamento[0].classList.contains('ativo')
+    ? ''
+    : opcoesPagamento[0].classList.add('ativo');
+  opcoesPagamento[1].classList.remove('ativo');
+  // opcoesPagamento[0].classList.add()
+
+  //---
+  cardsPlanos.forEach((e) => {
+    e.classList.remove('selecionado');
+  });
   botaoProximo.classList.add('desabilitado');
   botaoProximo.disabled = true;
   botaoProximo.classList.remove('animate');
@@ -231,8 +246,8 @@ function scriptPaginaPlanos() {
       informacoes.escolhas.plano = index;
     });
   });
-  //! Habilita o uso do botão
-  // if (cardsPlanos.forEach(elemento))
+  //todo Habilita o uso do botão
+
   //! -- Troca de opção de pagamento
   containerSwitch.addEventListener('click', () => {
     circuloSwitch.classList.toggle('ano');
@@ -256,7 +271,6 @@ function scriptPaginaPlanos() {
       informacoes.escolhas.tipoCobranca = 1;
     }
   });
-
   //todo -- Manda informações para o objeto --
 }
 // ---------------------------------------------------------ScriptPaginaPlanos()

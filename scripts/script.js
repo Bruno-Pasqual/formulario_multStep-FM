@@ -25,6 +25,13 @@ const precosAdicionais = document.querySelectorAll('.preco_adicionais');
 
 //Seleção elementos da página "confirmação"----
 const containerConfirmacao = document.getElementById('pagina_finalizacao');
+const valoresDosAdicionais = document.querySelectorAll(
+  '.valor_adicional_escolhido'
+);
+const tituloPlanoEscolhido = document.getElementById('titulo_plano_escolhido');
+const valorPlanoConfirmacao = document.getElementById(
+  'valor_plano_confirmacao'
+);
 
 //!Variáveis de controle ------------------------------------------------------
 let etapaAtiva = 0;

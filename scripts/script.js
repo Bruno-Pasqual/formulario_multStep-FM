@@ -32,10 +32,14 @@ const tituloPlanoEscolhido = document.getElementById('titulo_plano_escolhido');
 const valorPlanoConfirmacao = document.getElementById(
   'valor_plano_confirmacao'
 );
+const linhasDosAdicionais = document.querySelectorAll('.adicional_escolhido');
 
 //!Variáveis de controle ------------------------------------------------------
 let etapaAtiva = 0;
 let informacoes = {
+  arrayValores: [],
+  opcoesPlanos: ['Arcade', 'Avançado', 'Pro'],
+  opcoesConta: ['Mensal', 'Anual'],
   preco_planos: [(mes = [45, 60, 75]), (ano = [450, 600, 750])],
   preco_adicionais: [
     [5, 10, 10],
@@ -48,6 +52,10 @@ let informacoes = {
     tipoCobranca: 0,
     adicionais: [false, false, false],
   },
+
+  somaValores: informacoes.arrayValores.reduce(function (acumulador, valor) {
+    return acumulador + valor;
+  }),
 };
 console.log(informacoes.preco_planos[0][1]);
 console.log(circulosEtapas[1].classList.contains('ativo'));
@@ -251,6 +259,49 @@ function scriptPaginaAdicionais() {
 function scriptPaginaConfirmacao() {
   containerAdicionais.style.display = 'none';
   containerConfirmacao.style.display = 'block';
+
+  //todo ----------------
+  //Mostrando o plano correspondente a escolha do usuário.
+  tituloPlanoEscolhido.textContent = `${
+    informacoes.opcoesPlanos[informacoes.escolhas.plano]
+  } (${informacoes.opcoesConta[informacoes.escolhas.tipoCobranca]})`;
+
+  //Alterando o valor do plano escolhido e o nome
+  valorPlanoConfirmacao.textContent = `R$${
+    informacoes.preco_planos[informacoes.escolhas.tipoCobranca][
+      informacoes.escolhas.plano
+    ]
+  }/${informacoes.escolhaPlano[informacoes.escolhas.tipoCobranca]}`;
+  informacoes.arrayValores[0] =
+    informacoes.preco_planos[informacoes.escolhas.tipoCobranca][
+      informacoes.escolhas.plano
+    ];
+
+  //Mostrando ou esconde as divs dos adicionais
+  linhasDosAdicionais.forEach((elemento, index) => {
+    if (!informacoes.escolhas.adicionais[index]) {
+      elemento.style.display = 'none';
+      informacoes.arrayValores[index + 1] = 0;
+    } else {
+      //Altera conteúdo da div de acordo com as escolhas do usuário
+      valoresDosAdicionais[index].textContent = `+R$${
+        informacoes.preco_adicionais[informacoes.escolhas.tipoCobranca][index]
+      }/${informacoes.escolhaPlano[informacoes.escolhas.tipoCobranca]}`;
+
+      //adicionando valores dos adicionais ativos no array de valores
+      informacoes.arrayValores[index + 1] =
+        informacoes.preco_adicionais[informacoes.escolhas.tipoCobranca][index];
+      console.log(
+        typeof informacoes.preco_adicionais[informacoes.escolhas.tipoCobranca][
+          index
+        ]
+      );
+    }
+    console.log(informacoes.arrayValores);
+    //Trocando a mensagem do total
+
+    console.log(informacoes.soma);
+  });
 }
 
 // Executando script, começo !

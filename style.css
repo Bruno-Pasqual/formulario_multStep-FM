@@ -466,12 +466,16 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   display: none;
 }
 
 #obrigado_img {
   width: 56px;
-  margin-bottom: 24px;
+  position: relative;
+  top: 10px;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 h3 {
@@ -735,9 +739,15 @@ h3 {
 
   #container_total {
     width: 450px;
-    border: 1px solid red;
     position: absolute;
     left: 0;
     bottom: -70px;
+  }
+
+  #pagina_obrigado {
+    transform: translate(-50%, -50%);
+    position: absolute;
+    top: 60%;
+    left: 55%;
   }
 }

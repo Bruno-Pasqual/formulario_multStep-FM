@@ -6,6 +6,7 @@ const inputCelular = document.getElementById('input_numero');
 const mensagensErro = document.querySelectorAll('.mensagem_erro');
 const botaoProximo = document.querySelector('.botao_proximo');
 const circulosEtapas = document.querySelectorAll('.passo');
+const footerContainer = document.querySelector('footer');
 //Fazendo seleção dos containers para uso
 const ContainerForm = document.getElementById('form_container');
 
@@ -33,6 +34,10 @@ const valorPlanoConfirmacao = document.getElementById(
   'valor_plano_confirmacao'
 );
 const linhasDosAdicionais = document.querySelectorAll('.adicional_escolhido');
+const valorTotal = document.getElementById('valor_total');
+
+//Seleção elementos da pagina de agradecimento
+const paginaObrigado = document.getElementById('pagina_obrigado');
 
 //!Variáveis de controle ------------------------------------------------------
 let etapaAtiva = 0;
@@ -52,14 +57,8 @@ let informacoes = {
     tipoCobranca: 0,
     adicionais: [false, false, false],
   },
-
-  somaValores: informacoes.arrayValores.reduce(function (acumulador, valor) {
-    return acumulador + valor;
-  }),
 };
-console.log(informacoes.preco_planos[0][1]);
-console.log(circulosEtapas[1].classList.contains('ativo'));
-console.log();
+
 //! Funções -------------------------------------------------------------------
 
 //todo ---------------------------------------- Expressões regulares
@@ -155,8 +154,6 @@ function checarEtapa() {
     containerPlano.style.display = 'none';
     containerAdicionais.style.display = 'block';
     scriptPaginaAdicionais();
-
-    console.log('estou na página "2"');
   } else if (circulosEtapas[3].classList.contains('ativo')) {
     containerAdicionais.style.display = 'none';
     containerConfirmacao.style.display = 'block';
@@ -167,10 +164,14 @@ function checarEtapa() {
 //! Event handlers ------------------------------------------------------------
 
 botaoProximo.addEventListener('click', () => {
-  alert('fui clicado');
-  circulosEtapas.forEach((e) => {
-    e.classList.remove('ativo');
-  });
+  if (circulosEtapas[3].classList.contains('ativo')) {
+    containerConfirmacao.style.display = 'none';
+    paginaObrigado.style.display = 'block';
+    footerContainer.style.display = 'none';
+  } else
+    circulosEtapas.forEach((e) => {
+      e.classList.remove('ativo');
+    });
 
   etapaAtiva++;
   circulosEtapas[etapaAtiva].classList.add('ativo');
@@ -202,8 +203,6 @@ function scriptPaginaPlanos() {
       //Passa a escolha do jogador para o objeto
 
       informacoes.escolhas.plano = index;
-
-      console.log(informacoes);
     });
   });
   //! Habilita o uso do botão
@@ -233,14 +232,11 @@ function scriptPaginaPlanos() {
   });
 
   //todo -- Manda informações para o objeto --
-  // console.log(informacoes);
 }
 // ---------------------------------------------------------ScriptPaginaPlanos()
 
 // --------------------------------------------------- ScriptPaginaAdicionais()
 function scriptPaginaAdicionais() {
-  console.log(informacoes);
-
   precosAdicionais.forEach((elemento, index) => {
     //For each que irá fazer a alteração da mensagem e do preço mostrado de acordo com o que for selecionado pelo usuário.
 
@@ -291,17 +287,17 @@ function scriptPaginaConfirmacao() {
       //adicionando valores dos adicionais ativos no array de valores
       informacoes.arrayValores[index + 1] =
         informacoes.preco_adicionais[informacoes.escolhas.tipoCobranca][index];
-      console.log(
-        typeof informacoes.preco_adicionais[informacoes.escolhas.tipoCobranca][
-          index
-        ]
-      );
     }
-    console.log(informacoes.arrayValores);
-    //Trocando a mensagem do total
-
-    console.log(informacoes.soma);
   });
+
+  //Trocando a mensagem do total
+  let sum = informacoes.arrayValores.reduce(function (acumulador, valorAtual) {
+    return acumulador + valorAtual;
+  });
+  console.log(sum);
+  valorTotal.textContent = `${sum}/${
+    informacoes.escolhaPlano[informacoes.escolhas.tipoCobranca]
+  }`;
 }
 
 // Executando script, começo !

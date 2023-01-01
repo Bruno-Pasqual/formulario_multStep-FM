@@ -152,14 +152,12 @@ function checarEtapa() {
   //todo Função que irá fazer a verificação em qual página o usuário se encontra, e executara o script correspondente a cada página.
 
   if (circulosEtapas[0].classList.contains('ativo')) {
-    botaoVoltar.style.display = 'none';
+    botaoVoltar.style.opacity = '0';
     ContainerForm.style.display = 'block';
-    footerContainer.style.paddingLeft = '370px';
   } else if (circulosEtapas[1].classList.contains('ativo')) {
     ContainerForm.style.display = 'none';
     containerPlano.style.display = 'block';
-    footerContainer.style.paddingLeft = '0';
-    botaoVoltar.style.display = 'block';
+    botaoVoltar.style.opacity = '1';
     scriptPaginaPlanos();
   } else if (circulosEtapas[2].classList.contains('ativo')) {
     containerPlano.style.display = 'none';
